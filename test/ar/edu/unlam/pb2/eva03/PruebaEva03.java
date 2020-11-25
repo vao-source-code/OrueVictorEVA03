@@ -1,6 +1,7 @@
 package ar.edu.unlam.pb2.eva03;
-
 import static org.junit.Assert.*;
+
+import ar.edu.unlam.pb2.eva03.*;
 
 import org.junit.Test;
 
@@ -27,11 +28,12 @@ public class PruebaEva03 {
 		assertEquals((Integer)2, nuevo.getNumeroDeSocio());
 	}
 	
+	
 	@Test
 	public void  queSePuedaCrearUnCiclista() {
 		Ciclista nuevo = new Ciclista(3, "Enzo", "Ruta");
 
-		assertEquals("Ruta", nuevo.getTipoDeBicicleta());
+		assertEquals("RUTA", nuevo.getTipoDeBicicleta());
 		assertEquals((Integer) 3, nuevo.getNumeroDeSocio());
 	}
 
@@ -39,14 +41,14 @@ public class PruebaEva03 {
 	public void  queSePuedaCrearUnTriatleta() {
 		Triatleta nuevo = new Triatleta(4, "Luna", "Olimpico", TipoDeBicicleta.TRIA);
 		
-		assertEquals("Olimpico", nuevo.getDistanciaPreferida());
+		assertEquals("Olimpico", nuevo.getEstiloPreferido());
 		assertEquals(TipoDeBicicleta.TRIA, nuevo.getTipoDeBicicleta());
 		assertEquals((Integer)4, nuevo.getNumeroDeSocio());
 	}
 	
 	@Test
 	public void  queSePuedanIncorporarDistintosDeportistas() {
-		// El número de socio no se puede repetir
+		// El nï¿½mero de socio no se puede repetir
 		Club actual = new Club("CARP");
 		
 		actual.agregarDeportista(new Corredor(1000, "Camila", 42000));
@@ -64,9 +66,10 @@ public class PruebaEva03 {
 		assertEquals((Integer) 10, actual.getCantidadSocios());		
 	}
 	
+	
 	@Test (expected = NoEstaPreparado.class)
 	public void  queUnCorredorNoSePuedaInscribirEnUnaCarreraDeNatacion () throws NoEstaPreparado{	
-		// En las carreras de natación sólo pueden inscribirse los que sean INadador
+		// En las carreras de nataciï¿½n sï¿½lo pueden inscribirse los que sean INadador
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
 		actual.agregarDeportista(celeste);
@@ -77,7 +80,7 @@ public class PruebaEva03 {
 	
 	@Test (expected = NoEstaPreparado.class)
 	public void  queUnCorredorNoSePuedaInscribirEnUnTriatlon () throws NoEstaPreparado{		
-		// En los triatlones sólo pueden inscribirse los que sean INadador & ICiclista
+		// En los triatlones sï¿½lo pueden inscribirse los que sean INadador & ICiclista
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
 		
@@ -96,4 +99,6 @@ public class PruebaEva03 {
 		
 		assertEquals((Integer)1, actual.inscribirEnEvento("Maraton de New York", celeste));			
 	}
+	
+	
 }
