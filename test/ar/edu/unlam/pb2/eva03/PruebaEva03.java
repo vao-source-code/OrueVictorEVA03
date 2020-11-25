@@ -69,7 +69,7 @@ public class PruebaEva03 {
 	
 	@Test (expected = NoEstaPreparado.class)
 	public void  queUnCorredorNoSePuedaInscribirEnUnaCarreraDeNatacion () throws NoEstaPreparado{	
-		// En las carreras de nataci�n s�lo pueden inscribirse los que sean INadador
+	
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
 		actual.agregarDeportista(celeste);
@@ -80,7 +80,6 @@ public class PruebaEva03 {
 	
 	@Test (expected = NoEstaPreparado.class)
 	public void  queUnCorredorNoSePuedaInscribirEnUnTriatlon () throws NoEstaPreparado{		
-		// En los triatlones s�lo pueden inscribirse los que sean INadador & ICiclista
 		Deportista celeste = new Corredor(1000, "Celeste", 10000);
 		Club actual = new Club("Sitas");
 		
